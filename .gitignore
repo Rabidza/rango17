@@ -51,6 +51,8 @@ log/
 *.log
 *.sql
 *.sqlite
+# NH - added migrations to the file, I don't think this needs to be synced
+migrations/
 
 # OS generated files #
 ######################
