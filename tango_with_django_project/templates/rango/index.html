@@ -1,3 +1,6 @@
+<!-- Original index page changed according to:
+www.tangowithdjango.com/book17/chapters/models_templates.html
+
 <!DOCTYPE html>
 
 {% load staticfiles %}
@@ -15,4 +18,28 @@
         <img src="{% static "images/rango_0.jpg" %}" alt="Picture of Rango" />
     </body>
 
+</html>
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>Rango says...hello world!</h1>
+
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                <li>{{ category.name }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are now categories present.</strong>
+        {% endif %}
+
+        <a href="/rango/about/">About</a>
+    </body>
 </html>
