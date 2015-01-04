@@ -123,3 +123,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Absolute path to the media dir
 #     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
 #     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
 # )
+
+# NH - set LOGIN_URL for users who are not logged in
+LOGIN_URL = '/rango/login'
