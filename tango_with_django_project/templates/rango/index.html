@@ -34,13 +34,27 @@ www.tangowithdjango.com/book17/chapters/models_templates.html
             <ul>
                 {% for category in categories %}
                 <!-- Following line changed to add an HTML hyperlink -->
-                <li><a href="/rango/category/{{ category.slug }}">{{ category.name }}</li>
+                <li><a href="/rango/category/{{ category.slug }}">{{ category.name }}</a></li>
                 {% endfor %}
             </ul>
         {% else %}
-            <strong>There are now categories present.</strong>
+            <strong>There are no categories present.</strong>
         {% endif %}
 
+        <!-- NH - Add 5 most recent page views -->
+        <h1>Neill says...Top 5 pages!</h1>
+
+        {% if pages %}
+            <ul>
+                {% for page in pages %}
+                <li><a href="{{ page.url}}">{{ page.title }}</a> - {{ page.category}} ({{ page.views }} view(s))</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>No pages at present.</strong>
+        {% endif %}
+        
+        <br><br>
         <a href="/rango/about/">About</a>
     </body>
 </html>
