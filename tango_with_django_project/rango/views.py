@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 from rango.models import Category
 from rango.models import Page
@@ -215,3 +216,7 @@ def user_login(request):
         # No context variables to pass to the template system, hence the 
         # blank dictionary object...
         return render(request, 'rango/login.html', {})
+
+@login_required
+class restricted(request):
+    return HttpResponse("Since you're not logged in, you can see this text!")
