@@ -33,7 +33,8 @@ www.tangowithdjango.com/book17/chapters/models_templates.html
         {% if categories %}
             <ul>
                 {% for category in categories %}
-                <li>{{ category.name }}</li>
+                <!-- Following line changed to add an HTML hyperlink -->
+                <li><a href="/rango/category/{{ category.slug }}">{{ category.name }}</li>
                 {% endfor %}
             </ul>
         {% else %}
