@@ -1,5 +1,6 @@
 from django.contrib import admin
 from rango.models import Category, Page
+from rango.models import UserProfile
 
 # Add in this class to customize the Admin Interface
 class CategoryAdmin(admin.ModelAdmin):
@@ -12,3 +13,5 @@ class PageAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 #admin.site.register(Page, PageAdmin)
 admin.site.register(Page)
+# NH - Add UserProfile to the admin controls
+admin.site.register(UserProfile)
